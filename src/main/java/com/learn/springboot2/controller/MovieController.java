@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
@@ -40,7 +41,7 @@ public ResponseEntity<List<Movie>> findByName(@RequestParam(value = "name") Stri
 }
 
 @PostMapping
-public ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
+public ResponseEntity<Movie> saveMovie(@Valid @RequestBody Movie movie) {
 	return ResponseEntity.ok(movieService.save(movie));
 }
 
