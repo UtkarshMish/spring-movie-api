@@ -22,30 +22,6 @@ private String name;
 private List<Actor> actor;
 
 
-public Integer getId() {
-	return id;
-}
-
-public void setId(Integer id) {
-	this.id = id;
-}
-
-public String getName() {
-	return name;
-}
-
-public void setName(String name) {
-	this.name = name;
-}
-
-public List<Actor> getActor() {
-	return actor;
-}
-
-public void setActor(List<Actor> actor) {
-	this.actor = actor;
-}
-
 
 }
 

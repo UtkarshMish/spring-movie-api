@@ -1,6 +1,7 @@
 package com.learn.springboot2.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Actor {
 @GeneratedValue(strategy = GenerationType.AUTO)
 @Column(updatable = false)
@@ -16,36 +18,4 @@ private Integer actorID;
 private String actorName;
 private int MobileNumber;
 private String Address;
-
-public Integer getActorID() {
-	return actorID;
-}
-
-public void setActorID(Integer actorID) {
-	this.actorID = actorID;
-}
-
-public String getActorName() {
-	return actorName;
-}
-
-public void setActorName(String actorName) {
-	this.actorName = actorName;
-}
-
-public int getMobileNumber() {
-	return MobileNumber;
-}
-
-public void setMobileNumber(int mobileNumber) {
-	MobileNumber = mobileNumber;
-}
-
-public String getAddress() {
-	return Address;
-}
-
-public void setAddress(String address) {
-	Address = address;
-}
 }
