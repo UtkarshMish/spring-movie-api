@@ -1,6 +1,7 @@
 package com.learn.springboot2.service;
 
 import com.learn.springboot2.domain.Movie;
+import com.learn.springboot2.exceptions.ResourceNotFoundException;
 import com.learn.springboot2.repository.MovieRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -23,7 +24,8 @@ public Movie save(Movie movie) {
 }
 
 public Movie findById(int id) {
-	return movies.findById(id).get();
+	return movies.findById(id).orElseThrow(() -> new ResourceNotFoundException("Movie with id:" + id + " not Found"));
+
 }
 
 public List<Movie> findByName(String name) {
